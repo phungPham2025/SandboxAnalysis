@@ -2,6 +2,5 @@ pandas
 matplotlib
 numpy 
 streamlit
-PIL
 datetime
 xlrd
