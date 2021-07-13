@@ -240,7 +240,7 @@ def requestByDuration(requestWithinDate):
         lstDuration.append(name)
         st.write(group.sort_values(by= ["Assigned Agent"]))
         lstNumRequest.append(group.shape[0])
-        print("**********")
+        st.write("**********")
     barSmall(lstDuration, lstNumRequest)
 
 def requestByRating(requestWithinDate):
@@ -358,7 +358,7 @@ def main():
             st.sidebar.warning(f"Warning: The last date in your data is {lastDate}. Please select end date before or by {lastDate}.")
             st.stop()
 
-        elif firstDate.replace(hour=0, minute = 0) > pd.to_datetime(startDate):  #start date enter is out of range. firstDate has hour at 11pm so we need to reduce firstDate by 1 day so startDate can be greater than firstDate
+        elif firstDate.replace(hour=0, minute = 0, , second = 0) > pd.to_datetime(startDate):  #start date enter is out of range. firstDate has hour at 11pm so we need to reduce firstDate by 1 day so startDate can be greater than firstDate
             st.sidebar.warning(f"Warning: The start date is out of range. Please select start date by or after {str(firstDate).split()[0]}. ")
             st.stop()
         else:
